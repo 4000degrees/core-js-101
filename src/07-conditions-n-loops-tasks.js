@@ -343,7 +343,7 @@ function isBracketsBalanced(str) {
     const ch = str[i];
     if (opening.includes(ch)) bracketBuffer += ch;
     else if (closing.includes(ch)) {
-      if (bracketBuffer.at(-1) !== opening[closing.indexOf(ch)]) return false;
+      if (bracketBuffer[bracketBuffer.length - 1] !== opening[closing.indexOf(ch)]) return false;
       bracketBuffer = bracketBuffer.slice(0, -1);
     }
   }
